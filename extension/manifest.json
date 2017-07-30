@@ -1,0 +1,14 @@
+{
+  "manifest_version": 2,
+  "name": "Fire Pomodoro",
+  "version": "1.0.0",
+  "description": "Pomodoro Technique for FireFox",
+  "icons": {
+    "48": "icons/tomato-64.png"
+  },
+  "browser_action": {
+    "default_icon": "icons/tomato-64.png",
+    "default_title": "Arash's Test",
+    "default_popup": "popup.html"
+  }
+}
