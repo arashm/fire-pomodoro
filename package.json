@@ -1,0 +1,33 @@
+{
+  "name": "fire-pomodoro",
+  "version": "1.0.0",
+  "description": "Pomodoro technique as firefox extension",
+  "main": "index.js",
+  "scripts": {
+    "build": "webpack -w --display-error-details --progress --colors",
+    "start": "web-ext run -s extension/"
+  },
+  "repository": "git@github.com:arashm/fire-pomodoro.git",
+  "bugs": {
+    "url": "https://github.com/mdn/webextensions-examples/issues"
+  },
+  "author": "Arash Mousavi <mousavi.arash@gmail.com>",
+  "license": "MPL-2.0",
+  "devDependencies": {
+    "babel-core": "^6.25.0",
+    "babel-eslint": "^7.2.3",
+    "babel-loader": "^7.1.1",
+    "babel-plugin-transform-class-properties": "^6.24.1",
+    "babel-preset-es2017": "^6.24.1",
+    "babel-preset-react": "^6.24.1",
+    "eslint": "^4.3.0",
+    "eslint-loader": "^1.9.0",
+    "eslint-plugin-babel": "^4.1.1",
+    "webpack": "^3.3.0"
+  },
+  "dependencies": {
+    "react": "^15.6.1",
+    "react-dom": "^15.6.1",
+    "redux": "^3.7.2"
+  }
+}
