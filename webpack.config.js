@@ -16,10 +16,24 @@ module.exports = {
     filename: '[name].js',
   },
   module: {
-    rules: [{
-      exclude: ['/node_modules/'],
-      test: /\.jsx?$/,
-      loaders: ['babel-loader'],
+    rules: [
+      {
+        test: /\.jsx?$/,
+        loaders: ['babel-loader'],
+        exclude: ['/node_modules/'],
+      }, {
+        test: /\.scss$/,
+        use: [{
+          loader: "style-loader" // creates style nodes from JS strings
+        }, {
+          loader: "css-loader", options: {
+            sourceMap: true
+          } // translates CSS into CommonJS
+        }, {
+          loader: "sass-loader", options: {
+            sourceMap: true
+          } // compiles Sass to CSS
+        }]
     }]
   },
   resolve: {
