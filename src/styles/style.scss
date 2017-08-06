@@ -1,0 +1,19 @@
+body {
+  font-size: 16px;
+}
+
+.container {
+  padding: 20px 10px;
+  display: flex;
+}
+
+.counter {
+  .counter-minutes {
+    font-size: 5rem;
+    font-weight: bold;
+  }
+
+  .counter-seconds, .counter-colon {
+    font-size: 2rem;
+  }
+}

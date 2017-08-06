@@ -1,12 +1,14 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import Counter from './components/counter';
+import './styles/style.scss';
 
 class FirePomodoro extends React.Component {
   render() {
     return (
-      <div>
-        <h1>This is a test.</h1>
-      </div>
+      <section className='container'>
+        <Counter />
+      </section>
     );
   }
 }
