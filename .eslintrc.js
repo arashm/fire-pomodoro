@@ -1,4 +1,8 @@
-{
+module.exports = {
+  "extends": [ "standard", "plugin:react/recommended" ],
+  "plugins": [
+    "react"
+  ],
   "parserOptions": {
     "ecmaVersion": 6,
     "sourceType": "module",
@@ -12,4 +16,4 @@
     "amd": true,
     "webextensions": true
   }
-}
+};

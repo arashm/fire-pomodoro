@@ -1,12 +1,13 @@
-import React from 'react';
-import Tock from 'tocktimer';
-import moment from 'moment';
+import React from 'react'
+import PropTypes from 'prop-types'
+import Tock from 'tocktimer'
+import moment from 'moment'
 
 export default class Counter extends React.Component {
-  constructor(props) {
+  constructor (props) {
     super(props)
 
-    const { initialMinutes } = this.props;
+    const { initialMinutes } = this.props
 
     this.state = {
       minutesLeft: initialMinutes || '25',
@@ -14,21 +15,21 @@ export default class Counter extends React.Component {
     }
   }
 
-  componentDidMount() {
+  componentDidMount () {
     const initialStartTime =
-      `00:${this.state.minutesLeft}:${this.state.secondsLeft}`;
+      `00:${this.state.minutesLeft}:${this.state.secondsLeft}`
 
-    this._startTimer(initialStartTime);
+    this._startTimer(initialStartTime)
   }
 
-  componentWillUnmount() {
-    if (!this.timer) return false;
+  componentWillUnmount () {
+    if (!this.timer) return false
 
-    this.timer.stop();
-    this.timer = null;
+    this.timer.stop()
+    this.timer = null
   }
 
-  _startTimer(initialTime) {
+  _startTimer (initialTime) {
     const timer = new Tock({
       countdown: true,
       interval: 1000,
@@ -40,15 +41,15 @@ export default class Counter extends React.Component {
         this.setState({
           minutesLeft: currentTime.format('mm'),
           secondsLeft: currentTime.format('ss')
-        });
+        })
       }
-    });
+    })
 
-    this.timer = timer;
-    timer.start(initialTime);
+    this.timer = timer
+    timer.start(initialTime)
   }
 
-  render() {
+  render () {
     return (
       <div className='counter'>
         <span className='counter-minutes'>{ this.state.minutesLeft }</span>
@@ -57,4 +58,8 @@ export default class Counter extends React.Component {
       </div>
     )
   }
+}
+
+Counter.propTypes = {
+  initialMinutes: PropTypes.number
 }
