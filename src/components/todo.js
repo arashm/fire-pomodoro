@@ -18,7 +18,7 @@ export default class Todo extends React.Component {
     return (
       <div className={ `todo ${running ? 'running' : ''}` }>
         <span className='todo-text'>{ value }</span>
-        <button className='runPomodoro'></button>
+        <button>P</button>
       </div>
     )
   }

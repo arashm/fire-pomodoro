@@ -24200,8 +24200,10 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_react_dom___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_react_dom__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__components_counter__ = __webpack_require__(287);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__components_todo_list__ = __webpack_require__(292);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__styles_style_scss__ = __webpack_require__(295);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__styles_style_scss___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_4__styles_style_scss__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__components_todo_entry__ = __webpack_require__(294);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__styles_style_scss__ = __webpack_require__(295);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__styles_style_scss___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_5__styles_style_scss__);
+
 
 
 
@@ -24209,12 +24211,36 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 
 
 class FirePomodoro extends __WEBPACK_IMPORTED_MODULE_0_react___default.a.Component {
+  constructor(props) {
+    super(props);
+
+    this.addTodo = this.addTodo.bind(this);
+    this.state = {
+      todos: todos
+    };
+  }
+
+  addTodo(todo) {
+    this.setState({
+      todos: this.state.todos.concat(todo)
+    });
+  }
+
   render() {
     return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
       'section',
       { className: 'container' },
-      __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_3__components_todo_list__["a" /* default */], { todos: todos }),
-      __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_2__components_counter__["a" /* default */], null)
+      __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+        'div',
+        { className: 'left-side' },
+        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_4__components_todo_entry__["a" /* default */], { onAddTodo: this.addTodo }),
+        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_3__components_todo_list__["a" /* default */], { todos: this.state.todos })
+      ),
+      __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+        'div',
+        { className: 'right-side' },
+        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_2__components_counter__["a" /* default */], null)
+      )
     );
   }
 }
@@ -36539,8 +36565,6 @@ webpackContext.id = 291;
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_prop_types__ = __webpack_require__(47);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_prop_types___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_prop_types__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__todo__ = __webpack_require__(293);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__todo_entry__ = __webpack_require__(294);
-
 
 
 
@@ -36558,7 +36582,6 @@ class TodoList extends __WEBPACK_IMPORTED_MODULE_0_react___default.a.Component {
     return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
       'section',
       { className: 'todo-list' },
-      __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_3__todo_entry__["a" /* default */], null),
       this.todoElements()
     );
   }
@@ -36604,7 +36627,11 @@ class Todo extends __WEBPACK_IMPORTED_MODULE_0_react___default.a.Component {
         { className: 'todo-text' },
         value
       ),
-      __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('button', { className: 'runPomodoro' })
+      __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+        'button',
+        null,
+        'P'
+      )
     );
   }
 }
@@ -36625,11 +36652,24 @@ Todo.propTypes = {
 
 
 class TodoEntry extends __WEBPACK_IMPORTED_MODULE_0_react___default.a.Component {
+  constructor(props) {
+    super(props);
+    this.handleOnKeyDown = this.handleOnKeyDown.bind(this);
+  }
+
+  handleOnKeyDown(event) {
+    if (event.which === 13) {
+      console.log(this.props, this.props.onAddTodo);
+      const todo = { value: event.target.value, running: false };
+      this.props.onAddTodo(todo);
+    }
+  }
+
   render() {
     return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
       'div',
       { className: 'todo-entry' },
-      __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('input', { type: 'text' })
+      __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('input', { type: 'text', onKeyDown: this.handleOnKeyDown })
     );
   }
 }
@@ -36676,7 +36716,7 @@ exports = module.exports = __webpack_require__(297)(true);
 
 
 // module
-exports.push([module.i, "body {\n  font-size: 16px; }\n\n.container {\n  padding: 20px 10px;\n  display: flex; }\n\n.counter .counter-minutes {\n  font-size: 5rem;\n  font-weight: bold; }\n\n.counter .counter-seconds, .counter .counter-colon {\n  font-size: 2rem; }\n", "", {"version":3,"sources":["/home/arashm/workspace/Web/JS/fire-pomodoro/src/styles/src/styles/style.scss"],"names":[],"mappings":"AAAA;EACE,gBAAe,EAChB;;AAED;EACE,mBAAkB;EAClB,cAAa,EACd;;AAED;EAEI,gBAAe;EACf,kBAAiB,EAClB;;AAJH;EAOI,gBAAe,EAChB","file":"style.scss","sourcesContent":["body {\n  font-size: 16px;\n}\n\n.container {\n  padding: 20px 10px;\n  display: flex;\n}\n\n.counter {\n  .counter-minutes {\n    font-size: 5rem;\n    font-weight: bold;\n  }\n\n  .counter-seconds, .counter-colon {\n    font-size: 2rem;\n  }\n}\n"],"sourceRoot":""}]);
+exports.push([module.i, "body {\n  font-size: 16px; }\n\n.container {\n  padding: 20px 10px;\n  display: flex;\n  justify-content: space-between; }\n\n.counter {\n  margin-left: 1rem; }\n  .counter .counter-minutes {\n    font-size: 5rem;\n    font-weight: bold; }\n  .counter .counter-seconds, .counter .counter-colon {\n    font-size: 2rem; }\n\n.todo-entry {\n  width: 100%;\n  display: block;\n  margin-bottom: .7rem; }\n\n.todo {\n  width: 100%;\n  height: 2rem;\n  position: relative; }\n  .todo .todo-text {\n    line-height: 2rem;\n    width: 100%; }\n  .todo button {\n    position: absolute;\n    right: 0;\n    padding: 0;\n    margin: 0; }\n", "", {"version":3,"sources":["/home/arashm/workspace/Web/JS/fire-pomodoro/src/styles/src/styles/style.scss"],"names":[],"mappings":"AAAA;EACE,gBAAe,EAChB;;AAED;EACE,mBAAkB;EAClB,cAAa;EACb,+BAA8B,EAC/B;;AAED;EACE,kBAAiB,EAUlB;EAXD;IAII,gBAAe;IACf,kBAAiB,EAClB;EANH;IASI,gBAAe,EAChB;;AAGH;EACE,YAAW;EACX,eAAc;EACd,qBAAoB,EACrB;;AAED;EACE,YAAW;EACX,aAAY;EACZ,mBAAkB,EAanB;EAhBD;IAMI,kBAAiB;IACjB,YAAW,EACZ;EARH;IAWI,mBAAkB;IAClB,SAAQ;IACR,WAAU;IACV,UAAS,EACV","file":"style.scss","sourcesContent":["body {\n  font-size: 16px;\n}\n\n.container {\n  padding: 20px 10px;\n  display: flex;\n  justify-content: space-between;\n}\n\n.counter {\n  margin-left: 1rem;\n\n  .counter-minutes {\n    font-size: 5rem;\n    font-weight: bold;\n  }\n\n  .counter-seconds, .counter-colon {\n    font-size: 2rem;\n  }\n}\n\n.todo-entry {\n  width: 100%;\n  display: block;\n  margin-bottom: .7rem;\n}\n\n.todo {\n  width: 100%;\n  height: 2rem;\n  position: relative;\n\n  .todo-text {\n    line-height: 2rem;\n    width: 100%;\n  }\n\n  button {\n    position: absolute;\n    right: 0;\n    padding: 0;\n    margin: 0;\n  }\n}\n"],"sourceRoot":""}]);
 
 // exports
 

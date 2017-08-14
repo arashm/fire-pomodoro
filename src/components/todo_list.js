@@ -1,7 +1,6 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import Todo from './todo'
-import TodoEntry from './todo_entry'
 
 export default class TodoList extends React.Component {
   todoElements () {
@@ -15,7 +14,6 @@ export default class TodoList extends React.Component {
   render () {
     return (
       <section className='todo-list'>
-        <TodoEntry />
         { this.todoElements() }
       </section>
     )
