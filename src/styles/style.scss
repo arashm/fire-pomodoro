@@ -1,3 +1,43 @@
+@font-face {
+  font-family: 'icomoon';
+  src: url('../fonts/icomoon.ttf?tqr6h1') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+[class^="icon-"],
+[class*=" icon-"] {
+  // use !important to prevent issues with browser extensions that change fonts
+  font-family: 'icomoon';
+  -moz-osx-font-smoothing: grayscale;
+  font-style: normal;
+  font-variant: normal;
+  font-weight: normal;
+  line-height: 1;
+  speak: none;
+  text-transform: none;
+}
+
+.icon-bin::before {
+  content: '\e9ac';
+}
+
+.icon-list2::before {
+  content: '\e9bb';
+}
+
+.icon-play3::before {
+  content: '\ea1c';
+}
+
+.icon-pause2::before {
+  content: '\ea1d';
+}
+
+.icon-stop2::before {
+  content: '\ea1e';
+}
+
 body {
   font-size: 16px;
 }
@@ -16,7 +56,8 @@ body {
     font-weight: bold;
   }
 
-  .counter-seconds, .counter-colon {
+  .counter-seconds,
+  .counter-colon {
     font-size: 2rem;
   }
 }
@@ -37,10 +78,14 @@ body {
     width: 100%;
   }
 
-  button {
+  .button-group {
     position: absolute;
     right: 0;
     padding: 0;
     margin: 0;
+
+    .button {
+
+    }
   }
 }

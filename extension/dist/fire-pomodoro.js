@@ -36628,9 +36628,10 @@ class Todo extends __WEBPACK_IMPORTED_MODULE_0_react___default.a.Component {
         value
       ),
       __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-        'button',
-        null,
-        'P'
+        'div',
+        { className: 'button-group' },
+        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('div', { className: 'button icon-bin' }),
+        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('div', { className: 'button icon-play3' })
       )
     );
   }
@@ -36691,7 +36692,7 @@ var transform;
 var options = {}
 options.transform = transform
 // add the styles to the DOM
-var update = __webpack_require__(298)(content, options);
+var update = __webpack_require__(299)(content, options);
 if(content.locals) module.exports = content.locals;
 // Hot Module Replacement
 if(false) {
@@ -36716,7 +36717,7 @@ exports = module.exports = __webpack_require__(297)(true);
 
 
 // module
-exports.push([module.i, "body {\n  font-size: 16px; }\n\n.container {\n  padding: 20px 10px;\n  display: flex;\n  justify-content: space-between; }\n\n.counter {\n  margin-left: 1rem; }\n  .counter .counter-minutes {\n    font-size: 5rem;\n    font-weight: bold; }\n  .counter .counter-seconds, .counter .counter-colon {\n    font-size: 2rem; }\n\n.todo-entry {\n  width: 100%;\n  display: block;\n  margin-bottom: .7rem; }\n\n.todo {\n  width: 100%;\n  height: 2rem;\n  position: relative; }\n  .todo .todo-text {\n    line-height: 2rem;\n    width: 100%; }\n  .todo button {\n    position: absolute;\n    right: 0;\n    padding: 0;\n    margin: 0; }\n", "", {"version":3,"sources":["/home/arashm/workspace/Web/JS/fire-pomodoro/src/styles/src/styles/style.scss"],"names":[],"mappings":"AAAA;EACE,gBAAe,EAChB;;AAED;EACE,mBAAkB;EAClB,cAAa;EACb,+BAA8B,EAC/B;;AAED;EACE,kBAAiB,EAUlB;EAXD;IAII,gBAAe;IACf,kBAAiB,EAClB;EANH;IASI,gBAAe,EAChB;;AAGH;EACE,YAAW;EACX,eAAc;EACd,qBAAoB,EACrB;;AAED;EACE,YAAW;EACX,aAAY;EACZ,mBAAkB,EAanB;EAhBD;IAMI,kBAAiB;IACjB,YAAW,EACZ;EARH;IAWI,mBAAkB;IAClB,SAAQ;IACR,WAAU;IACV,UAAS,EACV","file":"style.scss","sourcesContent":["body {\n  font-size: 16px;\n}\n\n.container {\n  padding: 20px 10px;\n  display: flex;\n  justify-content: space-between;\n}\n\n.counter {\n  margin-left: 1rem;\n\n  .counter-minutes {\n    font-size: 5rem;\n    font-weight: bold;\n  }\n\n  .counter-seconds, .counter-colon {\n    font-size: 2rem;\n  }\n}\n\n.todo-entry {\n  width: 100%;\n  display: block;\n  margin-bottom: .7rem;\n}\n\n.todo {\n  width: 100%;\n  height: 2rem;\n  position: relative;\n\n  .todo-text {\n    line-height: 2rem;\n    width: 100%;\n  }\n\n  button {\n    position: absolute;\n    right: 0;\n    padding: 0;\n    margin: 0;\n  }\n}\n"],"sourceRoot":""}]);
+exports.push([module.i, "@font-face {\n  font-family: 'icomoon';\n  src: url(" + __webpack_require__(298) + ") format(\"truetype\");\n  font-weight: normal;\n  font-style: normal; }\n\n[class^=\"icon-\"],\n[class*=\" icon-\"] {\n  font-family: 'icomoon';\n  -moz-osx-font-smoothing: grayscale;\n  font-style: normal;\n  font-variant: normal;\n  font-weight: normal;\n  line-height: 1;\n  speak: none;\n  text-transform: none; }\n\n.icon-bin::before {\n  content: '\\E9AC'; }\n\n.icon-list2::before {\n  content: '\\E9BB'; }\n\n.icon-play3::before {\n  content: '\\EA1C'; }\n\n.icon-pause2::before {\n  content: '\\EA1D'; }\n\n.icon-stop2::before {\n  content: '\\EA1E'; }\n\nbody {\n  font-size: 16px; }\n\n.container {\n  padding: 20px 10px;\n  display: flex;\n  justify-content: space-between; }\n\n.counter {\n  margin-left: 1rem; }\n  .counter .counter-minutes {\n    font-size: 5rem;\n    font-weight: bold; }\n  .counter .counter-seconds,\n  .counter .counter-colon {\n    font-size: 2rem; }\n\n.todo-entry {\n  width: 100%;\n  display: block;\n  margin-bottom: .7rem; }\n\n.todo {\n  width: 100%;\n  height: 2rem;\n  position: relative; }\n  .todo .todo-text {\n    line-height: 2rem;\n    width: 100%; }\n  .todo .button-group {\n    position: absolute;\n    right: 0;\n    padding: 0;\n    margin: 0; }\n", "", {"version":3,"sources":["/home/arashm/workspace/Web/JS/fire-pomodoro/src/styles/src/styles/style.scss","/home/arashm/workspace/Web/JS/fire-pomodoro/src/styles/style.scss"],"names":[],"mappings":"AAAA;EACE,uBAAsB;EACtB,sDAA0D;EAC1D,oBAAmB;EACnB,mBAAkB,EAAA;;ACEpB;;EDIE,uBAAsB;EACtB,mCAAkC;EAClC,mBAAkB;EAClB,qBAAoB;EACpB,oBAAmB;EACnB,eAAc;EACd,YAAW;EACX,qBAAoB,EACrB;;AAED;EACE,iBAAgB,EACjB;;AAED;EACE,iBAAgB,EACjB;;AAED;EACE,iBAAgB,EACjB;;AAED;EACE,iBAAgB,EACjB;;AAED;EACE,iBAAgB,EACjB;;AAED;EACE,gBAAe,EAChB;;AAED;EACE,mBAAkB;EAClB,cAAa;EACb,+BAA8B,EAC/B;;AAED;EACE,kBAAiB,EAWlB;EAZD;IAII,gBAAe;IACf,kBAAiB,EAClB;EANH;;IAUI,gBAAe,EAChB;;AAGH;EACE,YAAW;EACX,eAAc;EACd,qBAAoB,EACrB;;AAED;EACE,YAAW;EACX,aAAY;EACZ,mBAAkB,EAiBnB;EApBD;IAMI,kBAAiB;IACjB,YAAW,EACZ;EARH;IAWI,mBAAkB;IAClB,SAAQ;IACR,WAAU;IACV,UAAS,EAKV","file":"style.scss","sourcesContent":["@font-face {\n  font-family: 'icomoon';\n  src: url('../fonts/icomoon.ttf?tqr6h1') format('truetype');\n  font-weight: normal;\n  font-style: normal;\n}\n\n[class^=\"icon-\"],\n[class*=\" icon-\"] {\n  // use !important to prevent issues with browser extensions that change fonts\n  font-family: 'icomoon';\n  -moz-osx-font-smoothing: grayscale;\n  font-style: normal;\n  font-variant: normal;\n  font-weight: normal;\n  line-height: 1;\n  speak: none;\n  text-transform: none;\n}\n\n.icon-bin::before {\n  content: '\\e9ac';\n}\n\n.icon-list2::before {\n  content: '\\e9bb';\n}\n\n.icon-play3::before {\n  content: '\\ea1c';\n}\n\n.icon-pause2::before {\n  content: '\\ea1d';\n}\n\n.icon-stop2::before {\n  content: '\\ea1e';\n}\n\nbody {\n  font-size: 16px;\n}\n\n.container {\n  padding: 20px 10px;\n  display: flex;\n  justify-content: space-between;\n}\n\n.counter {\n  margin-left: 1rem;\n\n  .counter-minutes {\n    font-size: 5rem;\n    font-weight: bold;\n  }\n\n  .counter-seconds,\n  .counter-colon {\n    font-size: 2rem;\n  }\n}\n\n.todo-entry {\n  width: 100%;\n  display: block;\n  margin-bottom: .7rem;\n}\n\n.todo {\n  width: 100%;\n  height: 2rem;\n  position: relative;\n\n  .todo-text {\n    line-height: 2rem;\n    width: 100%;\n  }\n\n  .button-group {\n    position: absolute;\n    right: 0;\n    padding: 0;\n    margin: 0;\n\n    .button {\n\n    }\n  }\n}\n","@font-face {\n  font-family: 'icomoon';\n  src: url(\"../fonts/icomoon.ttf?tqr6h1\") format(\"truetype\");\n  font-weight: normal;\n  font-style: normal; }\n\n[class^=\"icon-\"],\n[class*=\" icon-\"] {\n  font-family: 'icomoon';\n  -moz-osx-font-smoothing: grayscale;\n  font-style: normal;\n  font-variant: normal;\n  font-weight: normal;\n  line-height: 1;\n  speak: none;\n  text-transform: none; }\n\n.icon-bin::before {\n  content: '\\e9ac'; }\n\n.icon-list2::before {\n  content: '\\e9bb'; }\n\n.icon-play3::before {\n  content: '\\ea1c'; }\n\n.icon-pause2::before {\n  content: '\\ea1d'; }\n\n.icon-stop2::before {\n  content: '\\ea1e'; }\n\nbody {\n  font-size: 16px; }\n\n.container {\n  padding: 20px 10px;\n  display: flex;\n  justify-content: space-between; }\n\n.counter {\n  margin-left: 1rem; }\n  .counter .counter-minutes {\n    font-size: 5rem;\n    font-weight: bold; }\n  .counter .counter-seconds,\n  .counter .counter-colon {\n    font-size: 2rem; }\n\n.todo-entry {\n  width: 100%;\n  display: block;\n  margin-bottom: .7rem; }\n\n.todo {\n  width: 100%;\n  height: 2rem;\n  position: relative; }\n  .todo .todo-text {\n    line-height: 2rem;\n    width: 100%; }\n  .todo .button-group {\n    position: absolute;\n    right: 0;\n    padding: 0;\n    margin: 0; }\n"],"sourceRoot":""}]);
 
 // exports
 
@@ -36804,6 +36805,12 @@ function toComment(sourceMap) {
 /* 298 */
 /***/ (function(module, exports, __webpack_require__) {
 
+module.exports = __webpack_require__.p + "9a3d5a966a04bbb2851de62a0c986034.ttf";
+
+/***/ }),
+/* 299 */
+/***/ (function(module, exports, __webpack_require__) {
+
 /*
 	MIT License http://www.opensource.org/licenses/mit-license.php
 	Author Tobias Koppers @sokra
@@ -36847,7 +36854,7 @@ var singleton = null;
 var	singletonCounter = 0;
 var	stylesInsertedAtTop = [];
 
-var	fixUrls = __webpack_require__(299);
+var	fixUrls = __webpack_require__(300);
 
 module.exports = function(list, options) {
 	if (typeof DEBUG !== "undefined" && DEBUG) {
@@ -37160,7 +37167,7 @@ function updateLink (link, options, obj) {
 
 
 /***/ }),
-/* 299 */
+/* 300 */
 /***/ (function(module, exports) {
 
 
