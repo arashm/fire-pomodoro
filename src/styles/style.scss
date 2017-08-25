@@ -80,12 +80,14 @@ body {
 
   .button-group {
     position: absolute;
+    top: .5rem;
     right: 0;
     padding: 0;
     margin: 0;
 
     .button {
-
+      display: inline-block;
+      cursor: pointer;
     }
   }
 }

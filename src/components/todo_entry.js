@@ -1,4 +1,5 @@
-import { h, render, Component } from 'preact'
+import { h, Component } from 'preact'
+import PropTypes from 'prop-types'
 
 export default class TodoEntry extends Component {
   constructor (props) {
@@ -8,7 +9,6 @@ export default class TodoEntry extends Component {
 
   handleOnKeyDown (event) {
     if (event.which === 13) {
-      console.log(this.props, this.props.onAddTodo)
       const todo = { value: event.target.value, running: false }
       this.props.onAddTodo(todo)
     }
@@ -21,4 +21,8 @@ export default class TodoEntry extends Component {
       </div>
     )
   }
+}
+
+TodoEntry.propTypes = {
+  onAddTodo: PropTypes.function
 }

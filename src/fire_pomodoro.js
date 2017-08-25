@@ -49,4 +49,4 @@ const todos = [
   }
 ]
 
-render(<FirePomodoro/>, document.getElementById('app'))
+render(<FirePomodoro />, document.getElementById('app'))

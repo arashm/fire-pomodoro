@@ -1,4 +1,4 @@
-import { h, render, Component } from 'preact'
+import { h, Component } from 'preact'
 import PropTypes from 'prop-types'
 import Tock from 'tocktimer'
 import moment from 'moment'
