@@ -1,7 +1,7 @@
-import React from 'react'
+import { h, render, Component } from 'preact'
 import PropTypes from 'prop-types'
 
-export default class Todo extends React.Component {
+export default class Todo extends Component {
   constructor (props) {
     super(props)
 

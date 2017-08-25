@@ -1,9 +1,9 @@
-import React from 'react'
+import { h, render, Component } from 'preact'
 import PropTypes from 'prop-types'
 import Tock from 'tocktimer'
 import moment from 'moment'
 
-export default class Counter extends React.Component {
+export default class Counter extends Component {
   constructor (props) {
     super(props)
 

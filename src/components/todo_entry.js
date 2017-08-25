@@ -1,6 +1,6 @@
-import React from 'react'
+import { h, render, Component } from 'preact'
 
-export default class TodoEntry extends React.Component {
+export default class TodoEntry extends Component {
   constructor (props) {
     super(props)
     this.handleOnKeyDown = this.handleOnKeyDown.bind(this)

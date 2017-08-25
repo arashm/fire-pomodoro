@@ -1,11 +1,10 @@
-import React from 'react'
-import ReactDOM from 'react-dom'
+import { h, render, Component } from 'preact'
 import Counter from './components/counter'
 import TodoList from './components/todo_list'
 import TodoEntry from './components/todo_entry'
 import './styles/style.scss'
 
-class FirePomodoro extends React.Component {
+class FirePomodoro extends Component {
   constructor (props) {
     super(props)
 
@@ -50,4 +49,4 @@ const todos = [
   }
 ]
 
-ReactDOM.render(<FirePomodoro/>, document.getElementById('app'))
+render(<FirePomodoro/>, document.getElementById('app'))
